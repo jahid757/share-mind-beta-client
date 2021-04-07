@@ -11,7 +11,9 @@ const Home = () => {
     useEffect(() => {
         fetch('https://floating-wildwood-58594.herokuapp.com/post')
         .then(response => response.json())
-        .then(data => setPostData(data))
+        .then(data => {
+            setPostData(data)
+        })
     },[])
 
     return (

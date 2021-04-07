@@ -10,7 +10,7 @@ const MyPost = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [userPost,setUserPost] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/userPost?email='+loggedInUser.email)
+        fetch('https://floating-wildwood-58594.herokuapp.com/userPost?email='+loggedInUser.email)
         .then(response => response.json())
         .then(data => {
             setUserPost(data)

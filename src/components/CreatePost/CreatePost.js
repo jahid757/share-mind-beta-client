@@ -27,7 +27,8 @@ const CreatePost = () => {
     }
 
     const onSubmit = data => {
-        const postData = {...data, imgUrl, date,...loggedInUser}
+        const likes = [];
+        const postData = {...data, imgUrl, date,...loggedInUser,likes}
         console.log(postData);
         fetch('https://floating-wildwood-58594.herokuapp.com/addPost',{
             method: 'POST',
