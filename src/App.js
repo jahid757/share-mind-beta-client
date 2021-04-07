@@ -8,6 +8,7 @@ import {
 import './App.css';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import MyPost from './components/MyPost/MyPost';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 function App() {
@@ -15,14 +16,20 @@ function App() {
   return (
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>
-        <Switch>
-          <PrivateRoute exact path="/">
-            <Home></Home>
-          </PrivateRoute>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-        </Switch>
+          <Switch>
+            <PrivateRoute exact path="/">
+              <Home/>
+            </PrivateRoute>
+            <PrivateRoute path="/home">
+              <Home/>
+            </PrivateRoute>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <PrivateRoute path="/myPost">
+              <MyPost/>
+            </PrivateRoute>
+          </Switch>
         </Router>
       </UserContext.Provider>
   );

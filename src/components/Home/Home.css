@@ -22,3 +22,35 @@
 form small{
     color: red
 }
+.right_menu{
+    position:fixed;
+    top: 71px;
+    height:100%;
+    width: 300px;
+    right:0;
+    background:#152933;
+    color: #fff;
+    padding: 20px 0px;
+    box-sizing: border-box;
+}
+.right_menu.active::after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    background:red;
+    top:0;
+    bottom:0;
+    transition: ease-in-out;
+    animation: animate 1s  1 alternate ;
+}
+@keyframes animate {
+    0% {
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+        background:red;
+        
+    }
+}

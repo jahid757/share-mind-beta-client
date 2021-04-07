@@ -17,11 +17,7 @@ const Post = ({post}) => {
             <div className="post-data">
                 <h4 className="text-white">{post.title}</h4>
                 <img className="my-2" src={post.imgUrl || 'https://i.ibb.co/Pzqm9fQ/We-are-really-sorry.png'} alt=""/>
-<<<<<<< HEAD
                 <p className="text-white">{post.description}</p>
-=======
-                <p className="text-white">{post.description}</p>             
->>>>>>> cd1bbec (what I changed)
             </div>
         </div>
     );

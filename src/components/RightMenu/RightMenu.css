@@ -1,0 +1,19 @@
+.right_menu_ul li{
+    display:block;
+    list-style: none;
+}
+.right_menu_ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-weight: bold;
+    font-size: 20px;
+    display:block;
+    padding: 5px 15px;
+    transition: .3s;
+}
+.right_menu_ul{
+    margin: 0;padding: 0;
+}
+.right_menu_ul li a:hover{
+    background:#595959;
+}
