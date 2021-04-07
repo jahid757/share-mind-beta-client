@@ -39,8 +39,8 @@ const Post = ({post}) => {
                 <p className="text-white">{post.description}</p>
             </div>
             <div className="post_reaction d-flex justify-content-between text-white">
-                <p onClick={() => likePost(post._id)}>Like <span>{ post.likes.length}</span></p>
-                <p>Share</p>
+                {/* <p onClick={() => likePost(post._id)}>Like <span>{ post.likes.length}</span></p>
+                <p>Share</p> */}
             </div>
         </div>
     );
