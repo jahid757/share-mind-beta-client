@@ -23,6 +23,7 @@ const Login = () => {
         firebase.auth().signInWithPopup(provider).then(function(result) {
             const {displayName, email,photoURL} = result.user;
             const signedInUser = {name: displayName, email,photoURL} 
+            setUserToken()
             setLoggedInUser(signedInUser);
             history.replace(from);
             // ...
@@ -31,6 +32,15 @@ const Login = () => {
             console.log(errorMessage);
           });
     }
+
+    const setUserToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+          sessionStorage.setItem('token', idToken)
+        }).catch(function(error) {
+          // Handle error
+        });
+      }
+
     return (
         <div className="container text-center d-flex flex-column">
             <h2 className="text-white py-5">Login</h2>
